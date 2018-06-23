@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Guess Game </title>
+
+	<script type="text/javascript">
+		function game(){
+			var gameNum =parseInt(Math.random()*1000)+1;
+			var count=0;
+			while(true){
+			var guessedNum =  prompt ("Please select a number from 1 to 1000");
+			if (guessedNum==null) return;
+				if (gameNum==guessedNum && count <10){
+					alert("Congratualtions, Either you know the secret or you got lucky");
+					return;
+				}if (gameNum==guessedNum && count==10){
+					alert("Congratualtions, AHA you knwo the secret");
+					return;
+				}if (gameNum==guessedNum && count >10){
+					alert("Congratualtions, you should be able to better!");
+					return;
+				}
+				else if (gameNum<guessedNum){
+					alert("Too High, Try Again");
+					count++;
+				}
+				else if (gameNum>guessedNum) {
+					alert("Too Low, Try Again");
+					count++;
+				}
+				else {alert ("Incorrect entry, try Again");
+					count++;
+				}
+			}//while
+		}//game()
+	</script>
+
+</head>
+<body>
+
+	<input type="button" id="launch" value="Lunch Game" onclick="game()">
+
+</body>
+</html>
